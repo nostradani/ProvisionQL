@@ -1,4 +1,5 @@
 #import "Shared.h"
+#import <Security/Security.h>
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
@@ -247,27 +248,48 @@ NSData *codesignEntitlementsDataFromApp(NSData *infoPlistData, NSString *basePat
     NSString *bundleExecutable = [appPropertyList objectForKey:@"CFBundleExecutable"];
 
     NSString *binaryPath = [basePath stringByAppendingPathComponent:bundleExecutable];
-    // get entitlements: codesign -d <AppBinary> --entitlements - --xml
-    NSTask *codesignTask = [NSTask new];
-    [codesignTask setLaunchPath:@"/usr/bin/codesign"];
-    [codesignTask setStandardOutput:[NSPipe pipe]];
-    [codesignTask setStandardError:[NSPipe pipe]];
-    if (@available(macOS 11, *)) {
-        [codesignTask setArguments:@[@"-d", binaryPath, @"--entitlements", @"-", @"--xml"]];
-    } else {
-        [codesignTask setArguments:@[@"-d", binaryPath, @"--entitlements", @":-"]];
-    }
-    [codesignTask launch];
-
-    NSData *outputData = [[[codesignTask standardOutput] fileHandleForReading] readDataToEndOfFile];
-    NSData *errorData = [[[codesignTask standardError] fileHandleForReading] readDataToEndOfFile];
-    [codesignTask waitUntilExit];
-
-    if (outputData.length == 0) {
-        return errorData;
+    NSURL *binaryURL = [NSURL fileURLWithPath:binaryPath];
+    
+    // Create a SecStaticCodeRef from the binary file
+    SecStaticCodeRef staticCode = NULL;
+    OSStatus status = SecStaticCodeCreateWithPath((__bridge CFURLRef)binaryURL, kSecCSDefaultFlags, &staticCode);
+    if (status != errSecSuccess || !staticCode) {
+        NSLog(@"Failed to create static code for binary: %@", binaryPath);
+        return nil;
     }
 
-    return outputData;
+    // Retrieve the signing information, which includes entitlements
+    CFDictionaryRef signingInfo = NULL;
+    status = SecCodeCopySigningInformation(staticCode, kSecCSSigningInformation, &signingInfo);
+    CFRelease(staticCode); // Release static code reference now that we're done with it
+
+    if (status != errSecSuccess || !signingInfo) {
+        NSLog(@"Failed to retrieve signing information for binary: %@", binaryPath);
+        return nil;
+    }
+
+    // Extract the entitlements from the signing information dictionary
+    CFDictionaryRef entitlements = CFDictionaryGetValue(signingInfo, kSecCodeInfoEntitlements);
+    if (!entitlements) {
+        NSLog(@"No entitlements found for binary: %@", binaryPath);
+        CFRelease(signingInfo);
+        return nil;
+    }
+
+    // Convert the entitlements dictionary to NSData (plist format)
+    NSError *plistError = nil;
+    NSData *entitlementsData = [NSPropertyListSerialization dataWithPropertyList:(__bridge NSDictionary *)entitlements
+                                                                          format:NSPropertyListXMLFormat_v1_0
+                                                                         options:0
+                                                                           error:&plistError];
+    CFRelease(signingInfo); // Release the signing info dictionary
+
+    if (plistError || !entitlementsData) {
+        NSLog(@"Failed to serialize entitlements to data: %@", plistError);
+        return nil;
+    }
+
+    return entitlementsData;
 }
 
 NSString *iconAsBase64(NSImage *appIcon) {
