@@ -1,26 +1,20 @@
 #import "Shared.h"
 
-NSData *unzipFile(NSURL *url, NSString *filePath) {
-    NSTask *task = [NSTask new];
-    [task setLaunchPath:@"/usr/bin/unzip"];
-    [task setStandardOutput:[NSPipe pipe]];
-    [task setArguments:@[@"-p", [url path], filePath]]; // @"-x", @"*/*/*/*"
-    [task launch];
+#import <ProvisionQL-Swift.h>
 
-    NSData *pipeData = [[[task standardOutput] fileHandleForReading] readDataToEndOfFile];
-    [task waitUntilExit];
-    if (pipeData.length == 0) {
-        return nil;
-    }
-    return pipeData;
+NSData *unzipFile(NSURL *url, NSString *filePath) {
+    NSError* error = nil;
+    ZipArchive* archive = [[ZipArchive alloc] initWithFileURL:url error:&error];
+    return [archive unzipFileWithPattern:filePath];
 }
 
 void unzipFileToDir(NSURL *url, NSString *targetDir, NSString *filePath) {
-    NSTask *task = [NSTask new];
-    [task setLaunchPath:@"/usr/bin/unzip"];
-    [task setArguments:@[@"-u", @"-j", @"-d", targetDir, [url path], filePath]]; // @"-x", @"*/*/*/*"
-    [task launch];
-    [task waitUntilExit];
+    NSError* error = nil;
+    ZipArchive* archive = [[ZipArchive alloc] initWithFileURL:url error:&error];
+    
+    NSURL* target = [[NSURL fileURLWithPath:targetDir] URLByAppendingPathComponent:[filePath lastPathComponent]];
+    
+    [archive unzipFileWithPattern:filePath to:target];
 }
 
 NSImage *roundCorners(NSImage *image) {
