@@ -304,7 +304,7 @@ NSString *iconAsBase64(NSImage *appIcon) {
     return [imageData base64EncodedStringWithOptions:0];
 }
 
-OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options) {
+NSData* GeneratePreviewDataForURL(NSURL *URL, NSString *dataType) {
     @autoreleasepool {
         // create temp directory
         NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -312,8 +312,6 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         NSString *currentTempDirFolder = [tempDirFolder stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]];
         [fileManager createDirectoryAtPath:currentTempDirFolder withIntermediateDirectories:YES attributes:nil error:nil];
 
-        NSURL *URL = (__bridge NSURL *)url;
-        NSString *dataType = (__bridge NSString *)contentTypeUTI;
         NSData *provisionData = nil;
         NSData *appPlist = nil;
         NSData *codesignEntitlementsData = nil;
@@ -382,7 +380,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
             if (appPlist != nil) {
                 [synthesizedInfo setObject:@"hiddenDiv" forKey:@"ProvisionInfo"];
             } else {
-                return noErr;
+                return nil;
             }
         } else {
             [synthesizedInfo setObject:@"" forKey:@"ProvisionInfo"];
@@ -491,8 +489,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         NSData *data = (NSData *)CFBridgingRelease(dataRef);
         CFRelease(decoder);
 
-        if ((!data && !appPlist) || QLPreviewRequestIsCancelled(preview)) {
-            return noErr;
+        if ((!data && !appPlist)) {
+            return nil;
         }
 
         if (data) {
@@ -736,12 +734,24 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
             NSString *replacementToken = [NSString stringWithFormat:@"__%@__", key];
             [html replaceOccurrencesOfString:replacementToken withString:replacementValue options:0 range:NSMakeRange(0, [html length])];
         }
+        
+        return [html dataUsingEncoding:NSUTF8StringEncoding];
+    }
+}
 
-        NSDictionary *properties = @{ // properties for the HTML data
-                                     (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
-                                     (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html" };
+OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options) {
+    @autoreleasepool {
+        NSURL *URL = (__bridge NSURL *)url;
+        NSString *dataType = (__bridge NSString *)contentTypeUTI;
+        NSData* htmlData = GeneratePreviewDataForURL(URL, dataType);
+        
+        if (htmlData != nil && !QLPreviewRequestIsCancelled(preview)) {
+            NSDictionary *properties = @{ // properties for the HTML data
+                                         (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
+                                         (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html" };
 
-        QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding], kUTTypeHTML, (__bridge CFDictionaryRef)properties);
+            QLPreviewRequestSetDataRepresentation(preview, (__bridge CFDataRef)htmlData, kUTTypeHTML, (__bridge CFDictionaryRef)properties);
+        }
     }
 
     return noErr;
