@@ -1,6 +1,6 @@
 #import "Shared.h"
 
-#import <ProvisionQL-Swift.h>
+#import <ProvisionQL2-Swift.h>
 
 NSData *unzipFile(NSURL *url, NSString *filePath) {
     NSError* error = nil;
