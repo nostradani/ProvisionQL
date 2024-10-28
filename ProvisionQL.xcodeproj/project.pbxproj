@@ -26,6 +26,7 @@
 		55DB729B186E195500CAFEE7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DB729A186E195500CAFEE7 /* Security.framework */; };
 		6572FC592CD0616D0013F54D /* NSBundle+ProvisionQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */; };
 		6572FC5A2CD0616D0013F54D /* NSBundle+ProvisionQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */; };
+		6599DD902CD37BC200485DD4 /* ZIPFoundationObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 6599DD8F2CD37BC200485DD4 /* ZIPFoundationObjC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				557C842218731FB7008A2A0C /* WebKit.framework in Frameworks */,
+				6599DD902CD37BC200485DD4 /* ZIPFoundationObjC in Frameworks */,
 				55424C611870D4AA002F5408 /* AppKit.framework in Frameworks */,
 				55DB729B186E195500CAFEE7 /* Security.framework in Frameworks */,
 				55DB7287186E193500CAFEE7 /* CoreFoundation.framework in Frameworks */,
@@ -193,7 +195,6 @@
 				55DB7278186E193500CAFEE7 /* Frameworks */,
 				55DB7279186E193500CAFEE7 /* Headers */,
 				55DB727A186E193500CAFEE7 /* Resources */,
-				55DB727B186E193500CAFEE7 /* Rez */,
 				554C6385186E258000D9EEDE /* Run Script */,
 			);
 			buildRules = (
@@ -229,6 +230,9 @@
 				Base,
 			);
 			mainGroup = 55DB7272186E193500CAFEE7;
+			packageReferences = (
+				6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */,
+			);
 			productRefGroup = 55DB727E186E193500CAFEE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -250,16 +254,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXRezBuildPhase section */
-		55DB727B186E193500CAFEE7 /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		554C6385186E258000D9EEDE /* Run Script */ = {
@@ -394,6 +388,7 @@
 		55DB7298186E193500CAFEE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
@@ -414,6 +409,7 @@
 		55DB7299186E193500CAFEE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
@@ -453,6 +449,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nostradani/ZIPFoundationObjC.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6599DD8F2CD37BC200485DD4 /* ZIPFoundationObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */;
+			productName = ZIPFoundationObjC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55DB7273186E193500CAFEE7 /* Project object */;
 }

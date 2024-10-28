@@ -1,26 +1,46 @@
 #import "Shared.h"
 
-NSData *unzipFile(NSURL *url, NSString *filePath) {
-    NSTask *task = [NSTask new];
-    [task setLaunchPath:@"/usr/bin/unzip"];
-    [task setStandardOutput:[NSPipe pipe]];
-    [task setArguments:@[@"-p", [url path], filePath]]; // @"-x", @"*/*/*/*"
-    [task launch];
+@import ZIPFoundationObjC;
 
-    NSData *pipeData = [[[task standardOutput] fileHandleForReading] readDataToEndOfFile];
-    [task waitUntilExit];
-    if (pipeData.length == 0) {
-        return nil;
-    }
-    return pipeData;
+ZFOArchiveEntry* findEntry(ZFOArchive *archive, NSString* pattern) {
+    NSString* replaced = [[pattern stringByReplacingOccurrencesOfString:@"." withString:@"\\."] stringByReplacingOccurrencesOfString:@"*" withString:@".*"];
+    NSString* regexPattern = [NSString stringWithFormat:@"^%@$", replaced];
+    NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:regexPattern options:0 error:nil];
+    
+    return [archive findFirst:^BOOL(ZFOArchiveEntry * _Nonnull entry) {
+        NSString* path = entry.path;
+        return [regex firstMatchInString:path options:0 range:NSMakeRange(0, path.length)] != nil;
+    }];
 }
 
-void unzipFileToDir(NSURL *url, NSString *targetDir, NSString *filePath) {
-    NSTask *task = [NSTask new];
-    [task setLaunchPath:@"/usr/bin/unzip"];
-    [task setArguments:@[@"-u", @"-j", @"-d", targetDir, [url path], filePath]]; // @"-x", @"*/*/*/*"
-    [task launch];
-    [task waitUntilExit];
+NSData *unzipFile(NSURL *url, NSString *filePath) {
+    ZFOArchive *archive = [[ZFOArchive alloc] initWithUrl:url accessMode:ZFOAccessModeRead error:NULL];
+    ZFOArchiveEntry* entry = findEntry(archive, filePath);
+    
+    if (entry == nil) {
+        return nil;
+    }
+    
+    NSMutableData* result = [NSMutableData data];
+    
+    BOOL success = [archive extract:entry bufferSize:[ZFOArchive defaultReadChunkSize] skipCRC32:true progress:nil error:NULL consumer:^(NSData * _Nonnull data) {
+        [result appendData:data];
+    }];
+    
+    return success ? result : nil;
+}
+
+BOOL unzipFileToDir(NSURL *url, NSString *targetDir, NSString *filePath) {
+    ZFOArchive *archive = [[ZFOArchive alloc] initWithUrl:url accessMode:ZFOAccessModeRead error:NULL];
+    ZFOArchiveEntry* entry = findEntry(archive, filePath);
+    
+    if (entry == nil) {
+        return NO;
+    }
+    
+    NSURL* target = [[NSURL fileURLWithPath:targetDir] URLByAppendingPathComponent:[filePath lastPathComponent]];
+    BOOL result = [archive extract:entry to:target bufferSize:[ZFOArchive defaultReadChunkSize] skipCRC32:true allowUncontainedSymlinks:false progress:nil error:NULL];
+    return result;
 }
 
 NSImage *roundCorners(NSImage *image) {

@@ -17,7 +17,7 @@ static NSString * const kDataType_xcode_archive     = @"com.apple.xcode.archive"
 static NSString * const kDataType_app_extension     = @"com.apple.application-and-system-extension";
 
 NSData *unzipFile(NSURL *url, NSString *filePath);
-void unzipFileToDir(NSURL *url, NSString *filePath, NSString *targetDir);
+BOOL unzipFileToDir(NSURL *url, NSString *filePath, NSString *targetDir);
 
 NSImage *roundCorners(NSImage *image);
 NSImage *imageFromApp(NSURL *URL, NSString *dataType, NSString *fileName);
