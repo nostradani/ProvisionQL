@@ -37,10 +37,13 @@
 		6572FB462CCD94A40013F54D /* blankIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 553C6D311879E457002237FC /* blankIcon.png */; };
 		6572FB472CCD94A40013F54D /* defaultIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55424C621870D90E002F5408 /* defaultIcon.png */; };
 		6572FB482CCD94A40013F54D /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 555E9519186E2DC0001D406A /* template.html */; };
-		6572FB4B2CCD973A0013F54D /* NSBundle+ProvisionQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572FB4A2CCD973A0013F54D /* NSBundle+ProvisionQL.m */; };
 		6572FB4C2CCD973A0013F54D /* NSBundle+ProvisionQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572FB4A2CCD973A0013F54D /* NSBundle+ProvisionQL.m */; };
 		6572FB4D2CCD973A0013F54D /* NSBundle+ProvisionQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6572FB492CCD973A0013F54D /* NSBundle+ProvisionQL.h */; };
 		6572FB502CCD99130013F54D /* ProvisionQL2.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 656E16AE2CC86249007E8D00 /* ProvisionQL2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6572FBAB2CCEFA320013F54D /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = 6572FBAA2CCEFA320013F54D /* ZipArchive */; };
+		6572FBB22CCEFB460013F54D /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6572FBB12CCEFB460013F54D /* QuickLookThumbnailing.framework */; };
+		6572FBBF2CCEFB7D0013F54D /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
+		6572FBC52CCF958A0013F54D /* ZIPFoundationObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 6572FBC42CCF958A0013F54D /* ZIPFoundationObjC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
