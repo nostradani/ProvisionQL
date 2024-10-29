@@ -24,6 +24,8 @@
 		55DB728F186E193500CAFEE7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
 		55DB7291186E193500CAFEE7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
 		55DB729B186E195500CAFEE7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DB729A186E195500CAFEE7 /* Security.framework */; };
+		6572FC592CD0616D0013F54D /* NSBundle+ProvisionQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */; };
+		6572FC5A2CD0616D0013F54D /* NSBundle+ProvisionQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		55DB729A186E195500CAFEE7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ProvisionQL.h"; sourceTree = "<group>"; };
+		6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ProvisionQL.m"; sourceTree = "<group>"; };
 		AE61B2AE236C969C003749A1 /* autoupdate-revision.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "autoupdate-revision.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +159,8 @@
 				555E9511186E2D67001D406A /* Supporting-files */,
 				555E951A186E2DC0001D406A /* Scripts */,
 				555E9518186E2DC0001D406A /* Resources */,
+				6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */,
+				6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */,
 				557C842718733828008A2A0C /* Shared.h */,
 				557C842418732599008A2A0C /* Shared.m */,
 				55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */,
@@ -172,6 +178,7 @@
 			files = (
 				55424C671870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.h in Headers */,
 				557C842818733828008A2A0C /* Shared.h in Headers */,
+				6572FC5A2CD0616D0013F54D /* NSBundle+ProvisionQL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +287,7 @@
 				55424C681870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
 				555E9515186E2D67001D406A /* main.c in Sources */,
 				557C842618732599008A2A0C /* Shared.m in Sources */,
+				6572FC592CD0616D0013F54D /* NSBundle+ProvisionQL.m in Sources */,
 				55DB728F186E193500CAFEE7 /* GenerateThumbnailForURL.m in Sources */,
 				55DB7291186E193500CAFEE7 /* GeneratePreviewForURL.m in Sources */,
 			);

@@ -1,4 +1,5 @@
 #import "Shared.h"
+#import "NSBundle+ProvisionQL.h"
 #import <Security/Security.h>
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
@@ -294,7 +295,7 @@ NSData *codesignEntitlementsDataFromApp(NSData *infoPlistData, NSString *basePat
 
 NSString *iconAsBase64(NSImage *appIcon) {
     if (!appIcon) {
-        NSURL *iconURL = [[NSBundle bundleWithIdentifier:kPluginBundleId] URLForResource:@"defaultIcon" withExtension:@"png"];
+        NSURL *iconURL = [[NSBundle pluginBundle] URLForResource:@"defaultIcon" withExtension:@"png"];
         appIcon = [[NSImage alloc] initWithContentsOfURL:iconURL];
     }
     appIcon = roundCorners(appIcon);
@@ -359,7 +360,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         }
 
         NSMutableDictionary *synthesizedInfo = [NSMutableDictionary dictionary];
-        NSURL *htmlURL = [[NSBundle bundleWithIdentifier:kPluginBundleId] URLForResource:@"template" withExtension:@"html"];
+        NSURL *htmlURL = [[NSBundle pluginBundle] URLForResource:@"template" withExtension:@"html"];
         NSMutableString *html = [NSMutableString stringWithContentsOfURL:htmlURL encoding:NSUTF8StringEncoding error:NULL];
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
         [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -725,10 +726,10 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
         [synthesizedInfo setObject:@"" forKey:@"DEBUG"];
 #endif
 
-        synthesizedValue = [[NSBundle bundleWithIdentifier:kPluginBundleId] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        synthesizedValue = [[NSBundle pluginBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
         [synthesizedInfo setObject:synthesizedValue ?: @"" forKey:@"BundleShortVersionString"];
 
-        synthesizedValue = [[NSBundle bundleWithIdentifier:kPluginBundleId] objectForInfoDictionaryKey:@"CFBundleVersion"];
+        synthesizedValue = [[NSBundle pluginBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
         [synthesizedInfo setObject:synthesizedValue ?: @"" forKey:@"BundleVersion"];
 
         for (NSString *key in [synthesizedInfo allKeys]) {

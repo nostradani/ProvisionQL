@@ -1,4 +1,5 @@
 #import "Shared.h"
+#import "NSBundle+ProvisionQL.h"
 
 //Layout constants
 #define BADGE_MARGIN        10.0
@@ -60,7 +61,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
             }
 
             if (!appIcon) {
-                NSURL *iconURL = [[NSBundle bundleWithIdentifier:kPluginBundleId] URLForResource:@"defaultIcon" withExtension:@"png"];
+                NSURL *iconURL = [[NSBundle pluginBundle] URLForResource:@"defaultIcon" withExtension:@"png"];
                 appIcon = [[NSImage alloc] initWithContentsOfURL:iconURL];
             }
             static const NSString *IconFlavor;
@@ -102,7 +103,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
         int expStatus = 0;
 
         if (iconMode) {
-            NSURL *iconURL = [[NSBundle bundleWithIdentifier:kPluginBundleId] URLForResource:@"blankIcon" withExtension:@"png"];
+            NSURL *iconURL = [[NSBundle pluginBundle] URLForResource:@"blankIcon" withExtension:@"png"];
             appIcon = [[NSImage alloc] initWithContentsOfURL:iconURL];
         } else {
             appIcon = [[NSWorkspace sharedWorkspace] iconForFileType:dataType];
