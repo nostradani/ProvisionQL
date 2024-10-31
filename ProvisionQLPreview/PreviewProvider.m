@@ -8,6 +8,8 @@
 
 #import "PreviewProvider.h"
 
+NSData* generatePreviewDataForURL(NSURL *URL, NSString *dataType);
+
 @implementation PreviewProvider
 
 /*
@@ -36,18 +38,15 @@
     //You can create a QLPreviewReply in several ways, depending on the format of the data you want to return.
     //To return NSData of a supported content type:
     
-    UTType* contentType = UTTypeUTF8PlainText; //replace with your data type
+    UTType* contentType = UTTypeHTML; //replace with your data type
     
     QLPreviewReply* reply = [[QLPreviewReply alloc] initWithDataOfContentType:contentType contentSize:CGSizeMake(800, 800) dataCreationBlock:^NSData * _Nullable(QLPreviewReply * _Nonnull replyToUpdate, NSError *__autoreleasing  _Nullable * _Nullable error) {
-        
-        NSData* data = [@"Hello world" dataUsingEncoding:NSUTF8StringEncoding];
-        
-        //setting the stringEncoding for text and html data is optional and defaults to NSUTF8StringEncoding
-        replyToUpdate.stringEncoding = NSUTF8StringEncoding;
-        
-        //initialize your data here
-        
-        return data;
+        UTType *fileUTI = [UTType typeWithFilenameExtension:request.fileURL.pathExtension];
+        if (fileUTI) {
+            return generatePreviewDataForURL(request.fileURL, fileUTI.identifier);
+        }
+
+        return nil;
     }];
     
     //You can also create a QLPreviewReply with a fileURL of a supported file type, by drawing directly into a bitmap context, or by providing a PDFDocument.
