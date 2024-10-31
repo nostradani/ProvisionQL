@@ -31,7 +31,6 @@
 		6563A90E2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
 		6563A90F2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
 		6563A9102CD381AA007D7307 /* Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 557C842418732599008A2A0C /* Shared.m */; };
-		6563A9112CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
 		6563A9122CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 55424C661870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m */; };
 		6563A9132CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 55424C661870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m */; };
 		6563A9332CD3B0EF007D7307 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 555E9519186E2DC0001D406A /* template.html */; };
@@ -46,6 +45,9 @@
 		6599DDD32CD37FD100485DD4 /* ProvisionQLThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6599DDDD2CD37FE700485DD4 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599DDAD2CD37FB400485DD4 /* Quartz.framework */; };
 		6599DDEC2CD37FE700485DD4 /* ProvisionQLPreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		65FE31CB2CD439CA00219881 /* ProvisioninProfileThumbnailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FE31CA2CD439CA00219881 /* ProvisioninProfileThumbnailData.m */; };
+		65FE31CC2CD439CA00219881 /* ProvisioninProfileThumbnailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FE31CA2CD439CA00219881 /* ProvisioninProfileThumbnailData.m */; };
+		65FE31CD2CD439CA00219881 /* ProvisioninProfileThumbnailData.h in Headers */ = {isa = PBXBuildFile; fileRef = 65FE31C92CD439CA00219881 /* ProvisioninProfileThumbnailData.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProvisionQLThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6599DDC82CD37FD100485DD4 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
 		6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProvisionQLPreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		65FE31C92CD439CA00219881 /* ProvisioninProfileThumbnailData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvisioninProfileThumbnailData.h; sourceTree = "<group>"; };
+		65FE31CA2CD439CA00219881 /* ProvisioninProfileThumbnailData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvisioninProfileThumbnailData.m; sourceTree = "<group>"; };
 		AE61B2AE236C969C003749A1 /* autoupdate-revision.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "autoupdate-revision.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +280,8 @@
 				555E9518186E2DC0001D406A /* Resources */,
 				6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */,
 				6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */,
+				65FE31C92CD439CA00219881 /* ProvisioninProfileThumbnailData.h */,
+				65FE31CA2CD439CA00219881 /* ProvisioninProfileThumbnailData.m */,
 				557C842718733828008A2A0C /* Shared.h */,
 				557C842418732599008A2A0C /* Shared.m */,
 				55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */,
@@ -293,6 +299,7 @@
 			files = (
 				55424C671870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.h in Headers */,
 				557C842818733828008A2A0C /* Shared.h in Headers */,
+				65FE31CD2CD439CA00219881 /* ProvisioninProfileThumbnailData.h in Headers */,
 				6572FC5A2CD0616D0013F54D /* NSBundle+ProvisionQL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +508,7 @@
 				55424C681870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
 				555E9515186E2D67001D406A /* main.c in Sources */,
 				557C842618732599008A2A0C /* Shared.m in Sources */,
+				65FE31CC2CD439CA00219881 /* ProvisioninProfileThumbnailData.m in Sources */,
 				6572FC592CD0616D0013F54D /* NSBundle+ProvisionQL.m in Sources */,
 				55DB728F186E193500CAFEE7 /* GenerateThumbnailForURL.m in Sources */,
 				55DB7291186E193500CAFEE7 /* GeneratePreviewForURL.m in Sources */,
@@ -521,6 +529,7 @@
 				6563A90C2CD381AA007D7307 /* Shared.m in Sources */,
 				6563A90D2CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */,
 				6563A90E2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */,
+				65FE31CB2CD439CA00219881 /* ProvisioninProfileThumbnailData.m in Sources */,
 				6563A9122CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,7 +540,6 @@
 			files = (
 				6563A90F2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */,
 				6563A9102CD381AA007D7307 /* Shared.m in Sources */,
-				6563A9112CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */,
 				6563A9132CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
