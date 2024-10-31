@@ -6,7 +6,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Security/Security.h>
 
-#import <NSBezierPath+IOS7RoundedRect.h>
+#import "NSBezierPath+IOS7RoundedRect.h"
 
 static NSString * const kPluginBundleId = @"com.ealeksandrov.ProvisionQL";
 static NSString * const kDataType_ipa               = @"com.apple.itunes.ipa";
