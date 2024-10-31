@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,10 +24,57 @@
 		55DB728F186E193500CAFEE7 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
 		55DB7291186E193500CAFEE7 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
 		55DB729B186E195500CAFEE7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55DB729A186E195500CAFEE7 /* Security.framework */; };
+		6563A9092CD38187007D7307 /* ZIPFoundationObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 6563A9082CD38187007D7307 /* ZIPFoundationObjC */; };
+		6563A90B2CD3818B007D7307 /* ZIPFoundationObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 6563A90A2CD3818B007D7307 /* ZIPFoundationObjC */; };
+		6563A90C2CD381AA007D7307 /* Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 557C842418732599008A2A0C /* Shared.m */; };
+		6563A90D2CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
+		6563A90E2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
+		6563A90F2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7290186E193500CAFEE7 /* GeneratePreviewForURL.m */; };
+		6563A9102CD381AA007D7307 /* Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 557C842418732599008A2A0C /* Shared.m */; };
+		6563A9112CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55DB728E186E193500CAFEE7 /* GenerateThumbnailForURL.m */; };
+		6563A9122CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 55424C661870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m */; };
+		6563A9132CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 55424C661870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect.m */; };
 		6572FC592CD0616D0013F54D /* NSBundle+ProvisionQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */; };
 		6572FC5A2CD0616D0013F54D /* NSBundle+ProvisionQL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */; };
 		6599DD902CD37BC200485DD4 /* ZIPFoundationObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 6599DD8F2CD37BC200485DD4 /* ZIPFoundationObjC */; };
+		6599DDC92CD37FD100485DD4 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599DDC82CD37FD100485DD4 /* QuickLookThumbnailing.framework */; };
+		6599DDCA2CD37FD100485DD4 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599DDAD2CD37FB400485DD4 /* Quartz.framework */; };
+		6599DDD32CD37FD100485DD4 /* ProvisionQLThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6599DDDD2CD37FE700485DD4 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599DDAD2CD37FB400485DD4 /* Quartz.framework */; };
+		6599DDEC2CD37FE700485DD4 /* ProvisionQLPreview.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6599DDD12CD37FD100485DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55DB7273186E193500CAFEE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6599DDC62CD37FD100485DD4;
+			remoteInfo = ProvisionQLThumbnail;
+		};
+		6599DDEA2CD37FE700485DD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55DB7273186E193500CAFEE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6599DDDB2CD37FE700485DD4;
+			remoteInfo = ProvisionQLPreview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6599DDC22CD37FB400485DD4 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6599DDEC2CD37FE700485DD4 /* ProvisionQLPreview.appex in Embed Foundation Extensions */,
+				6599DDD32CD37FD100485DD4 /* ProvisionQLThumbnail.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		553C6D311879E457002237FC /* blankIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankIcon.png; sourceTree = "<group>"; };
@@ -54,8 +101,36 @@
 		55DB729A186E195500CAFEE7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6572FC572CD0616D0013F54D /* NSBundle+ProvisionQL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ProvisionQL.h"; sourceTree = "<group>"; };
 		6572FC582CD0616D0013F54D /* NSBundle+ProvisionQL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ProvisionQL.m"; sourceTree = "<group>"; };
+		6599DD952CD37F9800485DD4 /* ProvisionQLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProvisionQLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6599DDAD2CD37FB400485DD4 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProvisionQLThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6599DDC82CD37FD100485DD4 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
+		6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProvisionQLPreview.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE61B2AE236C969C003749A1 /* autoupdate-revision.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "autoupdate-revision.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6599DDD42CD37FD100485DD4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6599DDC62CD37FD100485DD4 /* ProvisionQLThumbnail */;
+		};
+		6599DDED2CD37FE700485DD4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6599DDDB2CD37FE700485DD4 /* ProvisionQLPreview */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6599DD962CD37F9800485DD4 /* ProvisionQLApp */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProvisionQLApp; sourceTree = "<group>"; };
+		6599DDCB2CD37FD100485DD4 /* ProvisionQLThumbnail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6599DDD42CD37FD100485DD4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ProvisionQLThumbnail; sourceTree = "<group>"; };
+		6599DDDE2CD37FE700485DD4 /* ProvisionQLPreview */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6599DDED2CD37FE700485DD4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ProvisionQLPreview; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		55DB7278186E193500CAFEE7 /* Frameworks */ = {
@@ -70,6 +145,32 @@
 				55DB7281186E193500CAFEE7 /* QuickLook.framework in Frameworks */,
 				55DB7285186E193500CAFEE7 /* CoreServices.framework in Frameworks */,
 				55DB7283186E193500CAFEE7 /* ApplicationServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DD922CD37F9800485DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDC42CD37FD100485DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6599DDC92CD37FD100485DD4 /* QuickLookThumbnailing.framework in Frameworks */,
+				6563A90B2CD3818B007D7307 /* ZIPFoundationObjC in Frameworks */,
+				6599DDCA2CD37FD100485DD4 /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDD92CD37FE700485DD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6599DDDD2CD37FE700485DD4 /* Quartz.framework in Frameworks */,
+				6563A9092CD38187007D7307 /* ZIPFoundationObjC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +229,9 @@
 				55457C10203C4A7500ED02E5 /* Metadata */,
 				55424C641870DB2A002F5408 /* NSBezierPath+IOS7RoundedRect */,
 				55DB7288186E193500CAFEE7 /* ProvisionQL */,
+				6599DD962CD37F9800485DD4 /* ProvisionQLApp */,
+				6599DDCB2CD37FD100485DD4 /* ProvisionQLThumbnail */,
+				6599DDDE2CD37FE700485DD4 /* ProvisionQLPreview */,
 				55DB727F186E193500CAFEE7 /* Frameworks */,
 				55DB727E186E193500CAFEE7 /* Products */,
 			);
@@ -137,6 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				55DB727D186E193500CAFEE7 /* ProvisionQL.qlgenerator */,
+				6599DD952CD37F9800485DD4 /* ProvisionQLApp.app */,
+				6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */,
+				6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +258,8 @@
 				55DB7282186E193500CAFEE7 /* ApplicationServices.framework */,
 				55DB7284186E193500CAFEE7 /* CoreServices.framework */,
 				55DB7286186E193500CAFEE7 /* CoreFoundation.framework */,
+				6599DDAD2CD37FB400485DD4 /* Quartz.framework */,
+				6599DDC82CD37FD100485DD4 /* QuickLookThumbnailing.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +315,77 @@
 			productReference = 55DB727D186E193500CAFEE7 /* ProvisionQL.qlgenerator */;
 			productType = "com.apple.product-type.bundle";
 		};
+		6599DD942CD37F9800485DD4 /* ProvisionQLApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6599DDA52CD37F9A00485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLApp" */;
+			buildPhases = (
+				6599DD912CD37F9800485DD4 /* Sources */,
+				6599DD922CD37F9800485DD4 /* Frameworks */,
+				6599DD932CD37F9800485DD4 /* Resources */,
+				6599DDC22CD37FB400485DD4 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6599DDD22CD37FD100485DD4 /* PBXTargetDependency */,
+				6599DDEB2CD37FE700485DD4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6599DD962CD37F9800485DD4 /* ProvisionQLApp */,
+			);
+			name = ProvisionQLApp;
+			packageProductDependencies = (
+			);
+			productName = ProvisionQLApp;
+			productReference = 6599DD952CD37F9800485DD4 /* ProvisionQLApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6599DDC62CD37FD100485DD4 /* ProvisionQLThumbnail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6599DDD52CD37FD100485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLThumbnail" */;
+			buildPhases = (
+				6599DDC32CD37FD100485DD4 /* Sources */,
+				6599DDC42CD37FD100485DD4 /* Frameworks */,
+				6599DDC52CD37FD100485DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6599DDCB2CD37FD100485DD4 /* ProvisionQLThumbnail */,
+			);
+			name = ProvisionQLThumbnail;
+			packageProductDependencies = (
+				6563A90A2CD3818B007D7307 /* ZIPFoundationObjC */,
+			);
+			productName = ProvisionQLThumbnail;
+			productReference = 6599DDC72CD37FD100485DD4 /* ProvisionQLThumbnail.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6599DDDB2CD37FE700485DD4 /* ProvisionQLPreview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6599DDEE2CD37FE700485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLPreview" */;
+			buildPhases = (
+				6599DDD82CD37FE700485DD4 /* Sources */,
+				6599DDD92CD37FE700485DD4 /* Frameworks */,
+				6599DDDA2CD37FE700485DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6599DDDE2CD37FE700485DD4 /* ProvisionQLPreview */,
+			);
+			name = ProvisionQLPreview;
+			packageProductDependencies = (
+				6563A9082CD38187007D7307 /* ZIPFoundationObjC */,
+			);
+			productName = ProvisionQLPreview;
+			productReference = 6599DDDC2CD37FE700485DD4 /* ProvisionQLPreview.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,8 +396,16 @@
 				ORGANIZATIONNAME = "Evgeny Aleksandrov";
 				TargetAttributes = {
 					55DB727C186E193500CAFEE7 = {
-						DevelopmentTeam = 5567X9EQ9Q;
 						ProvisioningStyle = Manual;
+					};
+					6599DD942CD37F9800485DD4 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					6599DDC62CD37FD100485DD4 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					6599DDDB2CD37FE700485DD4 = {
+						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
@@ -238,6 +426,9 @@
 			projectRoot = "";
 			targets = (
 				55DB727C186E193500CAFEE7 /* ProvisionQL */,
+				6599DD942CD37F9800485DD4 /* ProvisionQLApp */,
+				6599DDC62CD37FD100485DD4 /* ProvisionQLThumbnail */,
+				6599DDDB2CD37FE700485DD4 /* ProvisionQLPreview */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +441,27 @@
 				553C6D321879E457002237FC /* blankIcon.png in Resources */,
 				55424C631870D90E002F5408 /* defaultIcon.png in Resources */,
 				555E951C186E2DC0001D406A /* template.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DD932CD37F9800485DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDC52CD37FD100485DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDDA2CD37FE700485DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +499,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6599DD912CD37F9800485DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDC32CD37FD100485DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6563A90C2CD381AA007D7307 /* Shared.m in Sources */,
+				6563A90D2CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */,
+				6563A90E2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */,
+				6563A9122CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6599DDD82CD37FE700485DD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6563A90F2CD381AA007D7307 /* GeneratePreviewForURL.m in Sources */,
+				6563A9102CD381AA007D7307 /* Shared.m in Sources */,
+				6563A9112CD381AA007D7307 /* GenerateThumbnailForURL.m in Sources */,
+				6563A9132CD381B4007D7307 /* NSBezierPath+IOS7RoundedRect.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6599DDD22CD37FD100485DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6599DDC62CD37FD100485DD4 /* ProvisionQLThumbnail */;
+			targetProxy = 6599DDD12CD37FD100485DD4 /* PBXContainerItemProxy */;
+		};
+		6599DDEB2CD37FE700485DD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6599DDDB2CD37FE700485DD4 /* ProvisionQLPreview */;
+			targetProxy = 6599DDEA2CD37FE700485DD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		55DB7295186E193500CAFEE7 /* Debug */ = {
@@ -390,11 +644,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5567X9EQ9Q;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ProvisionQL/Supporting-files/Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
@@ -411,11 +667,13 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5567X9EQ9Q;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ProvisionQL/Supporting-files/Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
@@ -424,6 +682,248 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
+		6599DDA62CD37F9A00485DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLApp/ProvisionQLApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		6599DDA72CD37F9A00485DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLApp/ProvisionQLApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		6599DDD62CD37FD100485DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLThumbnail/ProvisionQLThumbnail.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProvisionQLThumbnail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProvisionQLThumbnail;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp.ProvisionQLThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		6599DDD72CD37FD100485DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLThumbnail/ProvisionQLThumbnail.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProvisionQLThumbnail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProvisionQLThumbnail;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp.ProvisionQLThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		6599DDEF2CD37FE700485DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLPreview/ProvisionQLPreview.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProvisionQLPreview/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProvisionQLPreview;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp.ProvisionQLPreview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		6599DDF02CD37FE700485DD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = ProvisionQLPreview/ProvisionQLPreview.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProvisionQLPreview/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProvisionQLPreview;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Evgeny Aleksandrov. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ealeksandrov.ProvisionQLApp.ProvisionQLPreview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -448,6 +948,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6599DDA52CD37F9A00485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6599DDA62CD37F9A00485DD4 /* Debug */,
+				6599DDA72CD37F9A00485DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6599DDD52CD37FD100485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLThumbnail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6599DDD62CD37FD100485DD4 /* Debug */,
+				6599DDD72CD37FD100485DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6599DDEE2CD37FE700485DD4 /* Build configuration list for PBXNativeTarget "ProvisionQLPreview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6599DDEF2CD37FE700485DD4 /* Debug */,
+				6599DDF02CD37FE700485DD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -462,6 +989,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6563A9082CD38187007D7307 /* ZIPFoundationObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */;
+			productName = ZIPFoundationObjC;
+		};
+		6563A90A2CD3818B007D7307 /* ZIPFoundationObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */;
+			productName = ZIPFoundationObjC;
+		};
 		6599DD8F2CD37BC200485DD4 /* ZIPFoundationObjC */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6599DD8E2CD37BC200485DD4 /* XCRemoteSwiftPackageReference "ZIPFoundationObjC" */;
