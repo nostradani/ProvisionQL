@@ -15,7 +15,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nostradani/ZIPFoundationObjC.git",
       "state" : {
-        "revision" : "a942ae952320faf94023456ec3a0125028d1d0ff",
+        "revision" : "980f2f91ff4e38263afb8cf8ec694e21491a26dc",
         "version" : "0.1.0"
       }
     }
